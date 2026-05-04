@@ -1,9 +1,9 @@
 # KINYO Project（金运）
-''' text
-Author: Kai Wang, Yunxi Li, Yahui Li
-Last Date: 2026.05.05
-Status: Mid-Tem
-'''
+
+- Author: Kai Wang, Yunxi Li, Yahui Li
+- Last Date: 2026.05.05
+- Status: Mid-Tem
+
 
 本项目旨在通过数据驱动的方式，赋能 KINYO金运 的短视频内容营销。我们基于企业提供的海量视频素材（700GB+）及多维投放数据，利用计算机视觉、自然语言处理及大模型技术，深度挖掘“爆款”视频的关键特征。
 核心目标：
