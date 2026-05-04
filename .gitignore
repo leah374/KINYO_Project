@@ -4,4 +4,7 @@ Data/K7视频素材/爆款/*
 Data/K7视频素材/没啥动静/*
 !Data/K7视频素材/爆款
 !Data/K7视频素材/爆款
+Processed_Data/K7VideoProcessed/*
+!Processed_Data/K7VideoProcessed/ffmpeg_k7_processed_results.csv
 .env
+volcengine_las_kinyo_tsinghuaproject_account_info.csv
