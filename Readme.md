@@ -50,6 +50,8 @@ KINYO_Project/
 │     └─ K7直播间短视频分析表.xlsx
 ├─ Processed_Data/                                  # 处理后的数据的文件夹
 │  ├─ chinese_holidays_2022_2026.csv                # 中国节假日
+│  ├─ overall_stats_week4                           # Rerun week2-task3的Code之后对（非）爆款视频Metrics的描述性统计-Quantile ⭐⭐⭐⭐⭐
+│  ├─ effects_summary_week4                         # Rerun week2-task3的Code之后对（非）爆款视频Metrics的描述性统计-MedianMean ⭐⭐⭐⭐⭐
 │  ├─ doubao_k7_analysis_result_15s.csv             # 豆包分析的爆款视频结果csv (15s截断版)
 │  ├─ doubao_k7_analysis_result_full.csv            # 豆包分析的爆款视频结果csv (完整视频)
 │  ├─ k7_filtered_videos.csv                        # K7的爆款视频DataFrame ⭐⭐⭐⭐⭐
