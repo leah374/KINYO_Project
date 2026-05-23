@@ -36,6 +36,21 @@ def normalize_name(text):
     parts = [p for p in re.split(r"[\s\-]+", text) if p]
     return "-".join(parts)
 
+def create_analysis_dataframe(reasons_dict):
+    """将分析结果转换为DataFrame格式"""
+    rows = []
+    for base_id, info in reasons_dict.items():
+        for video in info['high_score_videos']:
+            rows.append({
+                'indicator_id': base_id,
+                'indicator_name': info['indicator_name'],
+                'avg_score': info['avg_score'],
+                'video_id': video['video_id'],
+                'score': video['score'],
+                'reason': video['reason']
+            })
+    return pd.DataFrame(rows)
+
 
 # 对于素材标题使用LLM进行分析
 def evaluate_single_title(title, api_key, prompt_template, max_retries=3):
@@ -286,6 +301,7 @@ def compress_json_to_txt(input_json_path, output_txt_path):
     print(f"压缩后字符数：{len(compact_json)}")
     print(f"节省了 {len(json.dumps(data, ensure_ascii=False)) - len(compact_json)} 个字符 \n")
 
+
 def extract_video_analysis_to_wide_table(model_response: Dict[str, Any]) -> pd.DataFrame:
     """
     从火山引擎模型响应中提取视频分析结果，返回宽表格格式（一行一个视频）
@@ -300,13 +316,10 @@ def extract_video_analysis_to_wide_table(model_response: Dict[str, Any]) -> pd.D
             - core_strength: 核心优势
             - core_weakness: 核心劣势
             - key_suggestion: 提升建议
-            - D001_I001_score: 视觉冲击与钩子设定-得分
-            - D001_I001_score_basis: 视觉冲击与钩子设定-评分依据
-            - D001_I001_reason: 视觉冲击与钩子设定-理由
-            - D001_I002_score: 身份认同与人群筛选-得分
-            - D001_I002_score_basis: 身份认同与人群筛选-评分依据
-            - D001_I002_reason: 身份认同与人群筛选-理由
-            - ... (共9个指标，每个指标3个字段)
+            - D001-I001_score: Hook (0-3秒)-得分
+            - D001-I001_score_basis: Hook (0-3秒)-评分依据
+            - D001-I001_reason: Hook (0-3秒)-理由
+            - ... 
     """
     
     # 1. 提取content字段中的JSON字符串并解析
@@ -326,7 +339,7 @@ def extract_video_analysis_to_wide_table(model_response: Dict[str, Any]) -> pd.D
     result['core_weakness'] = summary.get('core_weakness')
     result['key_suggestion'] = summary.get('key_suggestion')
     
-    # 5. 提取9个指标的详细信息（宽表格展平）
+    # 5. 提取所有指标的详细信息（宽表格展平）
     for indicator in analysis_result.get('indicator_scores', []):
         indicator_id = indicator.get('indicator_id')  # 如 D001-I001
         
@@ -398,18 +411,32 @@ def extract_video_analysis_simple(model_response: Dict[str, Any]) -> pd.DataFram
         raise ValueError(f"不支持的数据类型: {type(data)}")
 
 
-# ============= 列名常量（方便后续引用） =============
+# ============= 列名常量 =============
 
 COLUMNS_SCORES = {
-    'D001-I001': '视觉冲击与钩子设定',
-    'D001-I002': '身份认同与人群筛选',
-    'D002-I001': '痛点与解决方案闭环',
-    'D002-I002': '节奏控制与信息密度',
-    'D003-I001': '场景化痛点还原',
-    'D003-I002': '竞品差异化与卖点可视化',
-    'D004-I001': '演员表现力与口播',
-    'D004-I002': '视听沉浸感与制作',
-    'D005-I001': '决策心理博弈与CTA'
+    # D001 脚本结构
+    'D001_I001': 'Hook (0-3秒)',
+    'D001_I002': 'Setup (铺垫与信任)',
+    'D001_I003': 'Twist (反转与高潮)',
+    'D001_I004': 'CTA (行动召唤)',
+    # D002 钩子设计
+    'D002_I001': '冲突与反差强度',
+    'D002_I002': '悬念留存设计',
+    # D003 节奏BGM与剪辑工程
+    'D003_I001': 'BPM与卡点频率',
+    'D003_I002': '转场与剪辑强度',
+    # D004 选品视角
+    'D004_I001': '产品颜值与高光展示',
+    'D004_I002': '价格锚点与即时满足',
+    # D005 文案张力
+    'D005_I001': '数字与具象化表达',
+    'D005_I002': '痛点直击与悬念词',
+    # D006 第一秒视觉
+    'D006_I001': '视觉冲击与反差大',
+    'D006_I002': '关键词大字报',
+    # D007 CTA与互动设计
+    'D007_I001': '评论引导与互动钩',
+    'D007_I002': '收藏与转发触发'
 }
 
 def get_score_columns() -> List[str]:
@@ -425,7 +452,7 @@ def get_reason_columns() -> List[str]:
 # ============= 辅助分析函数 =============
 def calculate_dimension_averages(df: pd.DataFrame) -> pd.DataFrame:
     """
-    从宽表格计算各维度平均分
+    从宽表格计算各维度平均分（基于v3的7个维度）
     
     Args:
         df: 宽表格格式的DataFrame
@@ -433,12 +460,15 @@ def calculate_dimension_averages(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         包含各维度平均分的DataFrame
     """
+    # 按照v3标准库的7个维度组织指标
     dimension_map = {
-        'D001': ['D001-I001', 'D001-I002'],
+        'D001': ['D001-I001', 'D001-I002', 'D001-I003', 'D001-I004'],
         'D002': ['D002-I001', 'D002-I002'],
         'D003': ['D003-I001', 'D003-I002'],
         'D004': ['D004-I001', 'D004-I002'],
-        'D005': ['D005-I001']
+        'D005': ['D005-I001', 'D005-I002'],
+        'D006': ['D006-I001', 'D006-I002'],
+        'D007': ['D007-I001', 'D007-I002']
     }
     
     result_rows = []
@@ -495,3 +525,109 @@ def get_lowest_indicators(df: pd.DataFrame, top_n: int = 3) -> pd.DataFrame:
         results.extend(scores[:top_n])
     
     return pd.DataFrame(results)
+
+def get_indicator_name(indicator_id):
+    """根据指标ID返回指标名称"""
+    name_map = {
+        # 完播率相关
+        "D001-I001": "Hook (0-3秒)",
+        "D002-I001": "冲突与反差强度",
+        "D002-I002": "悬念留存设计",
+        "D003-I001": "BPM与卡点频率",
+        "D005-I002": "痛点直击与悬念词",
+        "D006-I001": "视觉冲击与反差大",
+        "D006-I002": "关键词大字报",
+        # ROI相关
+        "D001-I002": "Setup (铺垫与信任)",
+        "D003-I002": "转场与剪辑强度",
+        "D004-I001": "产品颜值与高光展示",
+        "D007-I001": "评论引导与互动钩"
+    }
+    return name_map.get(indicator_id, indicator_id)
+
+
+def get_high_score_reasons(df, indicator_list):
+    """
+    对每个指标，计算平均分，筛选出高于平均分的视频，提取其score_reason
+    
+    Args:
+        df: DataFrame，包含评分数据
+        indicator_list: 指标列表（带_score后缀）
+    
+    Returns:
+        dict: {
+            "indicator_id": {
+                "avg_score": 平均分,
+                "high_score_videos": [
+                    {
+                        "video_id": "xxx",
+                        "score": 分数,
+                        "reason": "评分理由"
+                    },
+                    ...
+                ]
+            }
+        }
+    """
+    result_dict = {}
+    
+    for indicator in indicator_list:
+        # 获取指标的基础ID（去掉_score后缀）
+        base_id = indicator.replace('_score', '')
+        reason_col = f"{base_id}_reason"
+        
+        # 计算该指标的平均分
+        avg_score = df[indicator].mean()
+        
+        # 筛选高于平均分的视频
+        high_score_df = df[df[indicator] > avg_score].copy()
+        
+        # 提取video_id、score和reason
+        high_score_videos = []
+        for _, row in high_score_df.iterrows():
+            high_score_videos.append({
+                'video_id': row['video_id'],
+                'score': row[indicator],
+                'reason': row[reason_col] if pd.notna(row[reason_col]) else "无理由"
+            })
+        
+        # 存入字典
+        result_dict[base_id] = {
+            'indicator_name': get_indicator_name(base_id),  # 需要定义这个函数
+            'avg_score': round(avg_score, 2),
+            'high_score_count': len(high_score_videos),
+            'high_score_videos': high_score_videos
+        }
+    
+    return result_dict
+
+def load_json_data(file_path: str):
+    """加载JSON文件"""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_knowledge_base(knowledge_base, file_path: str):
+    """保存知识库到文件"""
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(knowledge_base, ensure_ascii=False, indent=2, fp=f)
+    print(f"知识库已保存: {file_path}")
+
+
+def print_knowledge_base_summary(knowledge_base, name: str):
+    """打印知识库摘要"""
+    print("\n" + "=" * 80)
+    print(f"{name} - 知识库摘要")
+    print("=" * 80)
+    
+    summary = knowledge_base.get('summary', {})
+    print(f"\n核心洞察: {summary.get('core_insight', 'N/A')}")
+    print(f"\n关键发现: {summary.get('key_finding', 'N/A')}")
+    
+    print("\n指标概览:")
+    for indicator in knowledge_base.get('indicators', []):
+        print(f"  - {indicator.get('indicator_name')}: 平均分 {indicator.get('avg_score')}")
+        print(f"    成功模式: {', '.join(indicator.get('success_patterns', [])[:2])}")
+    
+    print("\n策略建议:")
+    for i, rec in enumerate(knowledge_base.get('content_strategy_recommendations', [])[:3], 1):
+        print(f"  {i}. {rec}")
