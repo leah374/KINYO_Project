@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.streamlit/
+.vscode/
+outputs/*.log
+vector_db/local_processed_v1/
+raw_videos/
+*.mp4
+*.mov
+*.mkv
+*.avi

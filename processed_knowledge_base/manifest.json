@@ -1,0 +1,13 @@
+{
+  "product_category": "家庭K歌与影音一体机",
+  "raw_evidence_cases": "D:\\金运脚本生成agent\\processed_knowledge_base\\raw_evidence_cases.jsonl",
+  "structured_creative_cases": "D:\\金运脚本生成agent\\processed_knowledge_base\\structured_creative_cases.jsonl",
+  "free_tag_inventory": "D:\\金运脚本生成agent\\processed_knowledge_base\\free_tag_inventory.json",
+  "raw_count": 193,
+  "structured_count": 193,
+  "error_count": 0,
+  "tagger": "llm",
+  "model": "gpt-5.4",
+  "taxonomy_mode": "open_free_tags_then_cluster",
+  "join_note": "video_id is the numeric prefix shared by transcripts and knowledge_base files"
+}
