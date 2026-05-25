@@ -1,7 +1,0 @@
-openai
-pandas
-numpy
-faiss-cpu
-langgraph
-streamlit
-imageio-ffmpeg
