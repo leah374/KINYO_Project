@@ -47,3 +47,24 @@ python visual_agent/keyframe_storyboard_agent.py --generate-images --base-url "h
 - `--retries`：图片接口临时断连时自动重试次数，默认 2。
 - `--overwrite`：已存在的 PNG 也重新生成；默认会跳过已有图片，便于断点续跑。
 - `--skip-shots`：跳过指定分镜图片生成，例如 `--skip-shots S03,S07`。
+
+## Seedance 安全关键帧
+
+如果第 5 步 Seedance 提示输入图包含真人隐私，可以先生成一版“无可识别真人脸部”的安全首帧。它只保留客厅、电视、产品主机、线材、麦克风、遥控器和手部操作，方便在视频阶段再让 Seedance 生成虚构 AI 广告演员。
+
+```bash
+python visual_agent/safe_keyframe_generator.py \
+  --storyboard outputs/keyframes/storyboard_k7_audio.json \
+  --output-dir outputs/keyframes/k7_safe_images \
+  --safe-storyboard outputs/keyframes/storyboard_k7_safe_audio.json \
+  --product-dir k7
+```
+
+默认输出：
+
+```text
+outputs/keyframes/storyboard_k7_safe_audio.json
+outputs/keyframes/k7_safe_images/S01.png
+outputs/keyframes/k7_safe_images/S02.png
+...
+```
