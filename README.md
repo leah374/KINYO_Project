@@ -26,8 +26,8 @@ source venv/bin/activate  # Linux/Mac
 # 或
 venv\Scripts\activate  # Windows
 
-# 安装依赖
-pip install -r requirements.txt
+# 安装依赖 (python=3.13)
+pip install -r requirements_python313.txt
 ```
 
 ### 2. 配置环境变量
