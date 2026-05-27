@@ -1,0 +1,17 @@
+{
+  "id": "XiaoMing",
+  "name": "XiaoMing",
+  "gender": "Male",
+  "age": "Young Adult (20-30)",
+  "ethnicity": "East Asian",
+  "face_shape": "Oval",
+  "hairstyle": "Short hair",
+  "clothing": "Business Casual",
+  "custom_attributes": "Very Smart, major in Data Science",
+  "description": "East Asian male, young adult (20-30), Oval face shape, Short hair, wearing business casual clothing, Very Smart, major in Data Science",
+  "created_at": "2026-05-26T18:42:12.891167",
+  "images": {
+    "front_masked": "XiaoMing_front_masked.png",
+    "front_full": "XiaoMing_front_full.png"
+  }
+}

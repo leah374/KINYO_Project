@@ -1,0 +1,279 @@
+{
+  "storyboard": "outputs\\keyframes\\storyboard.json",
+  "base_url": "ark-524141d2-8817-4233-99e1-9540abc85d12-4e530",
+  "model": "doubao-seedance-2-0-260128",
+  "submit": true,
+  "jobs": [
+    {
+      "shot_id": "S01",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S01.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S01.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S01。\n画面内容：第一帧直接做左右分屏：左边是黑屏闲置电视和冷清客厅，右边是接上设备后全家拿麦欢唱的热闹画面\n镜头运动：fast cut, strong contrast, energetic opening beat\n机位：medium-wide living-room shot, family and TV both visible\n广告目的：反差/悬念\n口播语境：先别急着换电视。家里这台普通电视，只用一根线，到底能不能直接变成家庭KTV加影院？我现在接给你看。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S02",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S02.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S02.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S02。\n画面内容：0.5秒后切到手把主机放到茶几上的特写，再给电视接口一个快速推近镜头，制造“到底怎么变”的悬念\n镜头运动：fast cut, strong contrast, energetic opening beat\n机位：close-up product demo shot, hands and device in frame\n广告目的：反差/悬念\n口播语境：先别急着换电视。家里这台普通电视，只用一根线，到底能不能直接变成家庭KTV加影院？我现在接给你看。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S03",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S03.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S03.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S03。\n画面内容：一家人客厅实拍快切：聚会时有人说出去唱麻烦，长辈拿遥控器不知道点什么，孩子无聊看电视\n镜头运动：fast cut, strong contrast, energetic opening beat\n机位：close-up product demo shot, hands and device in frame\n广告目的：建立场景/痛点\n口播语境：很多家庭都一样：想热闹一下，去KTV嫌麻烦；想给爸妈找个娱乐，又怕操作太复杂。其实有电视就能用，不用换大件，也不用折腾一堆设备。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S04",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S04.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S04.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S04。\n画面内容：随后女主人拿起一体机，对着电视和家人示意“就在家里弄”\n镜头运动：smooth explanatory product shot\n机位：medium-wide living-room shot, family and TV both visible\n广告目的：建立场景/痛点\n口播语境：很多家庭都一样：想热闹一下，去KTV嫌麻烦；想给爸妈找个娱乐，又怕操作太复杂。其实有电视就能用，不用换大件，也不用折腾一堆设备。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S05",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S05.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S05.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S05。\n画面内容：先给高清线两端和接口特写：一端插主机，一端插电视，插上后电视屏幕立刻亮起并进入点歌界面\n镜头运动：hands-on demonstration, clear before-and-after action\n机位：close-up product demo shot, hands and device in frame\n广告目的：转折/解决\n口播语境：看清楚，就这一步：一根线连上，屏幕马上进点歌页。热门歌、老歌、儿歌、家庭欢唱都能找，曲库海量，还会持续更新。爸妈不会打字也没关系，直接说歌名，电视就能搜出来。你以为只能唱歌？再看，电影、戏曲、直播、广场舞都能切，一台设备把全家平时和聚会的娱乐都包了。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S06",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S06.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S06.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S06。\n画面内容：紧接着按BPM快切5组画面：1）点歌首页\n镜头运动：fast cut, strong contrast, energetic opening beat\n机位：medium-wide living-room shot, family and TV both visible\n广告目的：转折/解决\n口播语境：看清楚，就这一步：一根线连上，屏幕马上进点歌页。热门歌、老歌、儿歌、家庭欢唱都能找，曲库海量，还会持续更新。爸妈不会打字也没关系，直接说歌名，电视就能搜出来。你以为只能唱歌？再看，电影、戏曲、直播、广场舞都能切，一台设备把全家平时和聚会的娱乐都包了。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S07",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S07.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S07.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S07。\n画面内容：2）热门榜、经典老歌、儿歌、家庭欢唱分区\n镜头运动：smooth explanatory product shot\n机位：medium-wide living-room shot, family and TV both visible\n广告目的：转折/解决\n口播语境：看清楚，就这一步：一根线连上，屏幕马上进点歌页。热门歌、老歌、儿歌、家庭欢唱都能找，曲库海量，还会持续更新。爸妈不会打字也没关系，直接说歌名，电视就能搜出来。你以为只能唱歌？再看，电影、戏曲、直播、广场舞都能切，一台设备把全家平时和聚会的娱乐都包了。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S08",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S08.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S08.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S08。\n画面内容：3）长辈对遥控器说歌名，屏幕立刻出现搜索结果\n镜头运动：smooth explanatory product shot\n机位：close-up product demo shot, hands and device in frame\n广告目的：转折/解决\n口播语境：看清楚，就这一步：一根线连上，屏幕马上进点歌页。热门歌、老歌、儿歌、家庭欢唱都能找，曲库海量，还会持续更新。爸妈不会打字也没关系，直接说歌名，电视就能搜出来。你以为只能唱歌？再看，电影、戏曲、直播、广场舞都能切，一台设备把全家平时和聚会的娱乐都包了。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S09",
+      "duration": 5,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S09.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S09.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S09。\n画面内容：4）K歌界面切到电影、戏曲、直播、广场舞页面\n镜头运动：smooth explanatory product shot\n机位：medium-wide living-room shot, family and TV both visible\n广告目的：转折/解决\n口播语境：看清楚，就这一步：一根线连上，屏幕马上进点歌页。热门歌、老歌、儿歌、家庭欢唱都能找，曲库海量，还会持续更新。爸妈不会打字也没关系，直接说歌名，电视就能搜出来。你以为只能唱歌？再看，电影、戏曲、直播、广场舞都能切，一台设备把全家平时和聚会的娱乐都包了。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 5,
+        "watermark": false
+      }
+    },
+    {
+      "shot_id": "S10",
+      "duration": 6,
+      "image_path": "outputs\\keyframes\\k7_safe_images\\S10.png",
+      "next_image_path": "",
+      "output_path": "outputs\\videos\\clips\\S10.mp4",
+      "payload": {
+        "model": "doubao-seedance-2-0-260128",
+        "content": [
+          {
+            "type": "text",
+            "text": "生成一段竖屏短视频广告镜头，镜头编号 S10。\n画面内容：桌面整齐摆出主机和赠送麦克风，给赠品近景，再切到全家欢唱大景\n镜头运动：final offer frame, product and family benefit held clearly\n机位：close-up product demo shot, hands and device in frame\n广告目的：评论钩/转发/点击引导\n口播语境：现在下单就送麦克风，进店先看安装演示，再领福利更直观。家里有电视的，真的可以先备一套。你最想先给爸妈点哪首歌？评论区告诉我。\n音频要求：使用轻快、温暖、原创免版权的家庭氛围背景音乐；用自然清晰的普通话女声念出口播语境，语速适中，声音像短视频带货广告旁白；不要引用真实歌曲、影视剧、歌手、品牌或版权内容。\n字幕要求：视频画面中不要出现字幕、口播文字、促销大字、角标文案或任何可读文字，只保留音频念白。\n界面要求：电视和点歌页只使用虚构分类、抽象图标和占位歌单，不出现真实歌名、影视名、平台名、商标或版权素材。\n产品要求：保持首帧里的 K7 木纹箱体、黑色前面板、无线麦克风外观，不要替换成其他款式。\n保持首帧中的客厅、电视、产品主机、麦克风和空间风格一致；让动作自然连贯，产品和电视界面清晰可见。\n首帧不包含人脸。视频生成阶段可以让虚构的 AI 广告演员家庭成员从画面边缘自然入镜，人物不对应任何真实身份；优先使用侧脸、背影、中远景和手部互动，避免清晰正脸特写和真实人物肖像感。\n真实商业广告质感，干净明亮，避免水印、乱码字幕、夸张变形、错误手指和品牌侵权标识。\n整体风格参考：clean Chinese ecommerce short-video ad, warm family living room, practical product demo, natural light, high clarity\n连续性要求：use the same cozy living room, same TV wall, same product kit, consistent wardrobe and warm lighting across keyframes"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAt...<base64 omitted>"
+            },
+            "role": "reference_image"
+          }
+        ],
+        "generate_audio": true,
+        "ratio": "9:16",
+        "duration": 6,
+        "watermark": false
+      }
+    }
+  ],
+  "skipped": []
+}

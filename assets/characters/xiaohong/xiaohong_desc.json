@@ -1,0 +1,17 @@
+{
+  "id": "xiaohong",
+  "name": "xiaohong",
+  "gender": "Female",
+  "age": "Young Adult (20-30)",
+  "ethnicity": "East Asian",
+  "face_shape": "Oval",
+  "hairstyle": "Long straight black hair",
+  "clothing": "Sporty",
+  "custom_attributes": "she loves tennis",
+  "description": "East Asian female, young adult (20-30), Oval face shape, Long straight black hair, wearing sporty clothing, she loves tennis",
+  "created_at": "2026-05-26T19:09:53.911556",
+  "images": {
+    "front_masked": "xiaohong_front_masked.png",
+    "front_full": "xiaohong_front_full.png"
+  }
+}

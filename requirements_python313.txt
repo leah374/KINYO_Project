@@ -1,0 +1,57 @@
+# ============================================================
+# KINYO AI Video Generation Platform - Requirements
+# Python 3.13+ Compatible
+# ============================================================
+
+# Core Streamlit UI
+streamlit>=1.28.0
+pandas>=2.0.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Streamlit Extensions
+streamlit-option-menu>=0.3.6
+streamlit-extras>=0.3.0
+
+# Database & Utilities
+sqlalchemy>=2.0.0
+python-dotenv>=1.0.0
+watchdog>=3.0.0
+
+# ============================================================
+# AI Agent Dependencies
+# ============================================================
+
+# LangChain & LangGraph
+langchain-core>=1.0.0
+langgraph>=1.0.0
+langsmith>=0.1.0
+
+# OpenAI API
+openai>=1.0.0
+
+# Pydantic (required by langchain-core)
+pydantic>=2.0.0
+
+# FAISS for Vector Search
+faiss-cpu>=1.7.0
+
+# Video Processing
+imageio-ffmpeg>=0.4.0
+
+# ============================================================
+# Notes
+# ============================================================
+# 
+# Installation Instructions:
+# 1. Create a new conda environment with Python 3.13:
+#    conda create -n kinuyo python=3.13 -y
+#    conda activate kinuyo
+#
+# 2. Install dependencies:
+#    pip install -r requirements_python313.txt
+#
+# 3. Verify installation:
+#    python -c "import langgraph; print('OK')"
+#
+# ============================================================

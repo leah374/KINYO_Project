@@ -1,0 +1,17 @@
+{
+  "id": "Alice",
+  "name": "Alice",
+  "gender": "Female",
+  "age": "Young Adult (20-30)",
+  "ethnicity": "East Asian",
+  "face_shape": "Oval",
+  "hairstyle": "Long straight black hair",
+  "clothing": "Casual",
+  "custom_attributes": "",
+  "description": "East Asian female, young adult (20-30), Oval face shape, Long straight black hair, wearing casual clothing",
+  "created_at": "2026-05-26T19:07:05.639754",
+  "images": {
+    "front_masked": "Alice_front_masked.png",
+    "front_full": "Alice_front_full.png"
+  }
+}

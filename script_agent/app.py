@@ -1,4 +1,5 @@
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
@@ -6,7 +7,12 @@ from typing import Any, Dict, List
 import pandas as pd
 import streamlit as st
 
-from script_agent import VECTOR_BACKEND, active_vector_dir, run_agent, save_final_script
+# Add parent directory to path
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from script_agent.agent.script_agent import VECTOR_BACKEND, active_vector_dir, run_agent, save_final_script
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
