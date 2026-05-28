@@ -44,6 +44,7 @@ class WorkflowManager:
         objective: str = "roi",
         duration: int = 30,
         characters: Optional[List[Dict]] = None,
+        product_selling_points: Optional[str] = None,
         progress_callback: Optional[Callable] = None
     ) -> Dict[str, Any]:
         """Execute script generation stage"""
@@ -57,7 +58,8 @@ class WorkflowManager:
                 brief=brief,
                 objective=objective,
                 duration=duration,
-                characters=characters
+                characters=characters,
+                product_selling_points=product_selling_points
             )
             
             save_final_script(result)

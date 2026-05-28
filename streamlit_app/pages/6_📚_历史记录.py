@@ -62,126 +62,6 @@ def render_history_table(history: list, db: HistoryDatabase):
     return df
 
 
-def render_record_detail(record: dict):
-    """Render detailed view of a historical record"""
-    record_type = record.get("type", "unknown")
-    
-    st.markdown(f"### Record Details ({record_type.upper()})")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.metric("ID", record.get("id", "N/A"))
-    
-    with col2:
-        st.metric("Type", record_type.upper())
-    
-    with col3:
-        timestamp = record.get("timestamp", "")
-        st.metric("Timestamp", timestamp[:19].replace("T", " ") if timestamp else "N/A")
-    
-    st.divider()
-    
-    if record_type == "script":
-        render_script_detail(record)
-    elif record_type == "storyboard":
-        render_storyboard_detail(record)
-    elif record_type == "video":
-        render_video_detail(record)
-
-
-def render_script_detail(record: dict):
-    """Render script record details"""
-    st.markdown("#### Script Information")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("**Brief**")
-        st.text_area("", record.get("brief", "N/A"), height=150, disabled=True)
-    
-    with col2:
-        st.metric("Objective", record.get("objective", "N/A"))
-        st.metric("Duration", f"{record.get('duration', 'N/A')}s")
-    
-    result_json = record.get("result", "{}")
-    if isinstance(result_json, str):
-        result = json.loads(result_json)
-    else:
-        result = result_json
-    
-    with st.expander("View Result JSON", expanded=False):
-        st.json(result)
-    
-    file_path = record.get("file_path")
-    if file_path and Path(file_path).exists():
-        st.success(f"Output file exists: {file_path}")
-        
-        if st.button("Load This Result", key="load_script_result"):
-            SessionStateManager.set_script_result(result)
-            st.success("Result loaded into session!")
-
-
-def render_storyboard_detail(record: dict):
-    """Render storyboard record details"""
-    st.markdown("#### Storyboard Information")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.metric("Source File", (record.get("source_file") or "N/A")[-40:])
-    
-    with col2:
-        st.metric("Shots Count", record.get("shots_count", "N/A"))
-    
-    result_json = record.get("result", "{}")
-    if isinstance(result_json, str):
-        result = json.loads(result_json)
-    else:
-        result = result_json
-    
-    with st.expander("View Result JSON", expanded=False):
-        st.json(result)
-    
-    file_path = record.get("file_path")
-    if file_path and Path(file_path).exists():
-        st.success(f"Output file exists: {file_path}")
-
-
-def render_video_detail(record: dict):
-    """Render video record details"""
-    st.markdown("#### Video Information")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.metric("Clips Count", record.get("clips_count", "N/A"))
-    
-    with col2:
-        duration = record.get("duration_seconds")
-        st.metric("Duration", f"{duration}s" if duration else "N/A")
-    
-    with col3:
-        file_size = record.get("file_size_mb")
-        st.metric("File Size", f"{file_size:.2f} MB" if file_size else "N/A")
-    
-    result_json = record.get("result", "{}")
-    if isinstance(result_json, str):
-        result = json.loads(result_json)
-    else:
-        result = result_json
-    
-    with st.expander("View Result JSON", expanded=False):
-        st.json(result)
-    
-    file_path = record.get("file_path")
-    if file_path and Path(file_path).exists():
-        st.success(f"Output file exists: {file_path}")
-        
-        if file_path.endswith((".mp4", ".avi", ".mov")):
-            st.video(file_path)
-
-
 def main():
     st.set_page_config(
         page_title="历史记录 - KINYO AI",
@@ -214,39 +94,6 @@ def main():
         
         if history:
             df = render_history_table(history, db)
-            
-            if df is not None and not df.empty:
-                st.divider()
-                
-                col1, col2 = st.columns([3, 1])
-                
-                with col1:
-                    selected_id = st.number_input(
-                        "Select Record ID to view details",
-                        min_value=1,
-                        value=1,
-                        step=1
-                    )
-                
-                with col2:
-                    selected_type = st.selectbox(
-                        "Record Type",
-                        options=["script", "storyboard", "video"],
-                        key="detail_type_select"
-                    )
-                
-                if st.button("View Details", use_container_width=True):
-                    record = db.get_record_by_id(selected_type, selected_id)
-                    
-                    if record:
-                        record["type"] = selected_type
-                        st.session_state["selected_record"] = record
-                    else:
-                        st.warning("Record not found")
-                
-                if "selected_record" in st.session_state:
-                    st.divider()
-                    render_record_detail(st.session_state["selected_record"])
         else:
             st.info("No generation history yet. Start creating content!")
     
@@ -281,18 +128,10 @@ def main():
                         ):
                             brief = record.get("brief") or record.get("source_file") or "N/A"
                             st.markdown(f"**Brief/Source**: {brief[:200]}")
-                            
-                            if st.button(f"View Details", key=f"search_view_{record.get('type')}_{record.get('id')}"):
-                                st.session_state["selected_record"] = record
-                                st.rerun()
                 else:
                     st.warning("No matching records found")
             else:
                 st.warning("Please enter a search query")
-        
-        if "selected_record" in st.session_state:
-            st.divider()
-            render_record_detail(st.session_state["selected_record"])
     
     with tab3:
         st.markdown("### Statistics Overview")

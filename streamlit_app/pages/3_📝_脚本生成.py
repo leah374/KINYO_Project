@@ -163,6 +163,14 @@ def main():
             help="Describe your product, target audience, and marketing goals"
         )
         
+        product_selling_points = st.text_area(
+            "Selling Points",
+            value="",
+            height=100,
+            help="输入产品的核心卖点，如：价格优势、功能特点、使用场景、竞争优势等",
+            placeholder="例如：\n1. 普通电视一根线变KTV\n2. 百万曲库，持续更新\n3. 送两个专业麦克风\n4. 适合全家老少使用"
+        )
+        
         objective = st.selectbox(
             "Objective",
             options=["roi", "completion_rate", "balanced"],
@@ -250,7 +258,8 @@ def main():
                     brief=brief,
                     objective=objective,
                     duration=duration,
-                    characters=selected_chars if selected_chars else None
+                    characters=selected_chars if selected_chars else None,
+                    product_selling_points=product_selling_points if product_selling_points.strip() else None
                 )
                 
                 if result["success"]:

@@ -58,6 +58,7 @@ class ScriptAgentState(TypedDict, total=False):
     objective: str
     duration_sec: int
     characters: List[Dict[str, Any]]
+    product_selling_points: str
     parsed_brief: Dict[str, Any]
     retrieved_cases: List[Dict[str, Any]]
     retrieved_fragments: List[Dict[str, Any]]
@@ -783,13 +784,24 @@ def rag_retrieval_node(state: ScriptAgentState) -> ScriptAgentState:
 
 def planning_node(state: ScriptAgentState) -> ScriptAgentState:
     """LangGraph 节点：基于用户需求和 RAG 证据生成广告脚本策划案。"""
+    
+    product_selling_points = state.get("product_selling_points", "")
+    selling_points_section = ""
+    if product_selling_points:
+        selling_points_section = f"""
+产品核心卖点：
+{product_selling_points}
+
+注意：策划时请重点突出以上产品卖点。
+"""
+    
     prompt = f"""
 你是家庭K歌与影音一体机广告的资深短视频策划。
 请基于用户需求和RAG证据输出 JSON，不要输出 Markdown。
 
 用户需求：
 {state['parsed_brief']}
-
+{selling_points_section}
 检索到的爆款案例：
 {json.dumps(state.get('retrieved_cases', [])[:4], ensure_ascii=False)}
 
@@ -842,13 +854,21 @@ def script_generation_node(state: ScriptAgentState) -> ScriptAgentState:
 注意：visual 字段需要明确说明哪个镜头使用哪个人物出镜。
 """
     
+    product_selling_points = state.get("product_selling_points", "")
+    selling_points_section = ""
+    if product_selling_points:
+        selling_points_section = f"""
+产品核心卖点（请在脚本中重点展示）：
+{product_selling_points}
+"""
+    
     prompt = f"""
 你是广告短视频脚本编剧。请基于策划案和RAG证据，生成可交给后续分镜Agent使用的结构化脚本。脚本尽量描述详细，明确人物、场景、动作、道具、画面构图、文案内容和口播内容。
 必须输出 JSON，不要 Markdown。
 
 用户需求：
 {state['parsed_brief']}
-
+{selling_points_section}
 策划案：
 {json.dumps(state.get('planning', {}), ensure_ascii=False)}
 {character_info}
@@ -1057,8 +1077,14 @@ def build_graph():
     return graph.compile()
 
 
-def run_agent(brief: str, objective: str, duration: int, characters: Optional[List[Dict]] = None) -> Dict[str, Any]:
-    """运行完整脚本生成 Agent：创建图工作流并传入 brief、目标、时长和可用角色参数。"""
+def run_agent(
+    brief: str, 
+    objective: str, 
+    duration: int, 
+    characters: Optional[List[Dict]] = None,
+    product_selling_points: Optional[str] = None
+) -> Dict[str, Any]:
+    """运行完整脚本生成 Agent：创建图工作流并传入 brief、目标、时长、可用角色和产品卖点参数。"""
     app = build_graph()
     return app.invoke(
         {
@@ -1066,6 +1092,7 @@ def run_agent(brief: str, objective: str, duration: int, characters: Optional[Li
             "objective": objective,
             "duration_sec": duration,
             "characters": characters or [],
+            "product_selling_points": product_selling_points or "",
             "trace": [],
         }
     )
